@@ -3,13 +3,13 @@
  */
 public class Polibiusz implements Algorithm {
 
-    private final char letter[][] = {{'A', 'B', 'C', 'D', 'E'},
+    private final char hugeLetter[][] = {{'A', 'B', 'C', 'D', 'E'},
             {'F', 'G', 'H', 'I', 'K'},
             {'L', 'M', 'N', 'O', 'P'},
             {'Q', 'R', 'S', 'T', 'U'},
             {'V', 'W', 'X', 'Y', 'Z'}};
 
-    private final char hugeLetter[][] = {{'a', 'b', 'c', 'd', 'e'},
+    private final char letter[][] = {{'a', 'b', 'c', 'd', 'e'},
             {'f', 'g', 'h', 'i', 'k'},
             {'l', 'm', 'n', 'o', 'p'},
             {'q', 'r', 's', 't', 'u'},
@@ -27,7 +27,6 @@ public class Polibiusz implements Algorithm {
                     if (c == letter[i][j] || c == hugeLetter[i][j]) {
                         tmpWord += i + 1;
                         tmpWord += j + 1;
-                        tmpWord += ' ';
                     }
                 }
             }
@@ -38,7 +37,7 @@ public class Polibiusz implements Algorithm {
     public String decrypt(String word) {
         String tmpWord = new String();
         try {
-            for (int i = 0; i < word.length(); i += 3) {
+            for (int i = 0; i < word.length(); i += 2) {
                 //if (word.charAt(i) == ' ') {continue;}
                 int a = Character.getNumericValue(word.charAt(i));
                 int b = Character.getNumericValue(word.charAt(i+1));
